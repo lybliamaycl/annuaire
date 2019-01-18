@@ -1,0 +1,25 @@
+{% extends 'Layout/layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Thème 
+{% endblock %}
+
+{% block content %}
+
+<main class="grow-1 bg-c1 d-flex justify-center align-center ff1">
+
+    <div class="w75 d-flex flex-row flex-wrap">
+
+        {% for film in films %}
+        <article class="film d-flex flex-column align-center m20 shadow bg-c2">
+            <a href="film/{{ film.ID_FILM }}"><img src="./assets/img/imgfilm/{{ film.IMAGE }}"></a>
+            <p class="pt10 pb10 fs10 text-uppercase"><a class="c0 text-nodeco ff2" href="film/{{ film.ID_FILM }}">  {{ film.TITRE|length > 15 ? film.TITRE|slice(0, 15) ~ '...' : film.TITRE }}</a></p> 
+            <p class="pb10 c3 fs8">{{ film.ANNEE }}</p> 
+        </article>
+        {% endfor %}
+
+    </div>
+
+</main>
+    
+{% endblock %}

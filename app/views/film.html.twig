@@ -1,0 +1,36 @@
+{% extends 'Layout/layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Film
+{% endblock %}
+
+{% block content %}
+
+<main class="grow-1 bg-c1 d-flex justify-center align-center ff1">
+
+    <article class="w75 d-flex flex-column min-h500p">
+
+        <h3 class="fs22 ff2 bg-c1 p20 c3 text-center">{{ film.TITRE }}</h3>
+
+        <div class="w100 d-flex flex-row shadow bg-c2 p20">
+
+            <img src = "./assets/img/imgfilm/{{ film.IMAGE }}" alt ="{{ film.IMAGE }}" class="img-responsive">
+            
+            <ul class="grow-2 ml20 fs10">
+                <li><i class="fas fa-arrow-right"></i> Année de sortie : {{ film.ANNEE }}</li>
+                <li><i class="fas fa-arrow-right"></i> Réalisé par : {{ film.REALISATEUR }}</li>
+                <li><i class="fas fa-arrow-right"></i> Genre(s) : 
+                    {% for genre in genresFilm %}
+                    {{ genre.NOM }}
+                    {% endfor %}
+                </li>
+                <li class="mt20 fs12 text-justify">{{ film.DESCRIPTION }}</li>
+            </ul>
+
+        </div>
+
+    </article>
+
+</main>
+    
+{% endblock %}

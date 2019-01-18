@@ -1,0 +1,14 @@
+<nav class="min-w200p bg-c3 ff1">
+
+    <h2 id ="menu" class="c4 p10 d-flex flex-row justify-spacee cursor-pointer"><i class="fas fa-tv"></i> Genres <i class="fas fa-chevron-down"></i></h2>
+
+    <ul id="nav" class="hidden trans">
+    {% for genre in genres %}
+        <li class="p20"><a class="text-nodeco c0 ff2 fs8" href="genre/{{ genre.ID_GENRE }}" alt="genre {{ genre.NOM }}">{{ genre.NOM }}</a></li>
+    {% endfor %}
+    </ul>
+
+</nav>
+
+
+
